@@ -1,21 +1,29 @@
 git command
 
-A 创建版本库
+1、 创建版本库
 
 a)
-git mkdir file
-git cd file
-pwd
+mkdir file
 
 b)
 git init
 
 
-B 文件添加到版本库
+2、 文件添加到版本库
 
 a)
-git add file
-git commit -m "本次提交的说明"
+git add file(把文件修改添加到暂存区)
+git commit -m "本次提交的说明"（把暂存区的所有内容提交到当前分支）
+
+git status 查看状况
+git diff HEAD -- file
+查看的是工作区和版本库里最新版本的区别
+
+可以合并提交好几次的修改
+1st git add
+2nd git add
+git commit -m ""
+
 
 b)
 添加多个文件
@@ -24,12 +32,117 @@ git add file2 file3
 git commit -m "add 3 files."
 
 
-C 添加到远程版本库
+3、 添加到远程版本库
 git remote add origin git@github.com:efeelize/file.git
 git push -u origin master(1st time)
 git push origin master
 
 
-D 版本回退
+4、 版本回退
+git log
+显示的是最近提交到最远的提交的日志上
 
+git log --pretty=oneline
+数字是 commit id
+
+HEAD 当前版本
+HEAD^上一个版本
+HEAD^^上上一个版本
+往上100个版本是 HEAD~100
+
+
+git reset --hard HEAD^
+
+5、回到未来的版本
+a)在没有关掉的命令行窗口找到想要回去的 commit id 但是不用写完全
+git reset --hard 856fe76a
+
+b)找不到 commit id
+git reflog
+此时找到要用的 commit id（确定要回到未来的版本）
+然后用 git reset回去
+
+
+6、 删除文件
+git rm file
+git commit -m "remove file"
+? 我从 github 上删除文件失败了
+
+7、 恢复误删除的文件
+git checkout -- file
+
+
+8、 从远程库克隆
+git clone git@github.com:efeelize/file.git
+
+9、 修改文件名
+mv 旧文件名 新文件名
+
+10、 撤销修改
+
+丢弃工作区的修改
+git checkout -- file
+git checkout file 切换到另一个分支
+
+a)修改了但是还没有放到暂存区，撤销修改就回到和版本库一模一样的状态（git add 的状态）
+b)已经添加到了暂存区之后，又做了修改，此时撤销修改就回到添加到暂存区后的状态（git commit 的状态）
+
+git reset HEAD file 可以把暂存区的修改撤销掉重新返回到工作区
+git reset 可以回退版本，也可以把暂存区的修改回退到工作区
+要用 git status 查看
+
+
+11、 dev
+
+？不是很理解 master&dev relationship
+
+a)git chekout -b dev
+实际上是创建并切换，相当于两条命令
+git branch dev
+git checkout dev
+
+创建dev
+？git branch file
+
+b)git branch 查看当前分支
+然后在 dev 上 
+git add file
+git commit -m "" 
+
+c)dev上的工作完成，切换回master
+git checkout master
+
+d)把 dev 的工作成果合并到 master 上面
+git merge dev
+
+e)合并完成后，删除 dev
+git branch -d dev
+
+f)删除后查看 branch
+git branch
+
+12、解决冲突
+13、分支管理策略
+14、bug 分支
+15、feature分支
+16、多人协作
+17、创建标签
+a)切换到需要打标签的分支上
+git branch
+18、操作标签
+
+19、config
+a)让 git显示颜色让命令输出看起来更加醒目
+git config --global color.ui true
+
+b)命令简写
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.com commit
+git config --global alias.br branch
+git config --global alias.unstage "reset HEAD"
+git config --global alias.last "log-1" 
+git config --global alias.config  cfig
+
+?好像没有配置成功，是不是双引号应该是单引号
 
