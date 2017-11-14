@@ -4,6 +4,15 @@ git command
 git config --global user.name "efeelize"
 git config --global email "1217139486@qq.com"
 
+-f=--force
+
+1)cd ..
+2)cd law
+
+1)plus 2)equals
+cd ../law
+
+
 IF forget command
 git help
 
@@ -47,9 +56,9 @@ notes:
 
 
 3、 添加到远程版本库
-git remote add origin git@github.com:efeelize/file.git
-git push -u origin master(1st time)
-git push origin master
+git remote add github git@github.com:efeelize/file.git
+git push -u github master(1st time)
+git push github master
 
 
 1st time
@@ -108,6 +117,10 @@ conclu:
 删除也是一个修改操作
 
 rm file 从文件管理器中删除
+rm -rf 强行删除
+
+recurse force
+
 git rm file 添加删除操作到暂存区
 git commit -m "remove file" 提交
 
@@ -133,6 +146,7 @@ git clone git@github.com:efeelize/file.git
 
   a)git自动把本地 master 分支和远程的 master 分支对应起来
   b)远程库的默认名称是 origin
+    我自己改成了 github
   c)默认只是克隆 master 分支到本地
 
   查看远程库的信息
@@ -148,8 +162,8 @@ git clone git@github.com:efeelize/file.git
 
   推送指定分支到远程库对应的远程分支上
 
-  git push origin master
-  git push origin dev
+  git push github master
+  git push github dev
   ...
 
   master  主分支时刻与远程同步
@@ -161,6 +175,20 @@ git clone git@github.com:efeelize/file.git
 
 9、 修改文件名
 mv 旧文件名 新文件名
+
+  
+  修改 master 的名称
+
+a)在.git 里找到 .config
+b)vi .config
+c)i (ie.insert进行修改)
+d)q (退出修改)
+e):(可以输入命令)
+f)wq 保存退出
+  q 不保存退出
+  q! 强行退出
+ g）git st 查看状态
+
 
 10、 撤销修改
 
@@ -283,13 +311,14 @@ git config --global alias.别名 原名
 
 我所使用的别名
 
-git config --global alias.st status
-git config --global alias.ckt checkout
-git config --global alias.cmt commit
-git config --global alias.br branch 
-git config --global alias.cfg config
+st status
+ckt checkout
+cmt commit
+br branch 
+cfg config
+ga global alias(这个好像没有成功)
 
-?我怎么验证我设置成功了
+
 ？什么样的命令可以配置别名
 ？显示最后一次的提交信息是用来干什么
 
