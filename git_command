@@ -1,5 +1,13 @@
 git command
 
+0、设置
+git config --global user.name "efeelize"
+git config --global email "1217139486@qq.com"
+
+IF forget command
+git help
+
+
 1、 创建版本库
 
 a)
@@ -7,12 +15,13 @@ mkdir file
 
 b)
 git init
+将一个目录变成 git 可以管理的仓库
 
 
 2、 文件添加到版本库
 
 a)
-git add file(把文件修改添加到暂存区)
+git add file(把文件修改添加到暂存区 stage)
 git commit -m "本次提交的说明"（把暂存区的所有内容提交到当前分支）
 
 git status 查看状况
@@ -32,10 +41,28 @@ git add file2 file3
 git commit -m "add 3 files."
 
 
+notes:
+创建 git 版本库的时候，git 自动为我们创建唯一的 master 分支，-m 就是往 master 分支上提交更改。一旦提交后，git status 查看工作区就是干净的。
+
+
+
 3、 添加到远程版本库
 git remote add origin git@github.com:efeelize/file.git
 git push -u origin master(1st time)
 git push origin master
+
+
+1st time
+a)把本地 master 分支推送到远程的 master
+b)把本地 master分支和远程 master 分支关联起来
+
+? :-u
+
+
+删除与指定远程库的关联
+
+查看链接
+git remote -v(-v 为详细的参数信息)
 
 
 4、 版本回退
@@ -43,7 +70,8 @@ git log
 显示的是最近提交到最远的提交的日志上
 
 git log --pretty=oneline
-数字是 commit id
+
+数字是 commit id（版本号）
 
 HEAD 当前版本
 HEAD^上一个版本
@@ -58,22 +86,78 @@ a)在没有关掉的命令行窗口找到想要回去的 commit id 但是不用�
 git reset --hard 856fe76a
 
 b)找不到 commit id
-git reflog
+git reflog（查看每一次的历史命令）
 此时找到要用的 commit id（确定要回到未来的版本）
 然后用 git reset回去
 
 
+
+notes:
+
+git 版本回退速度非常快，git在内部有个指向当前版本的指针
+if:回退版本
+then:
+a)指针在不同版本号之间移动
+b)更新到工作区的文件
+conclu:
+指针指向哪个版本号，这个版本就是当前版本
+
+
 6、 删除文件
-git rm file
-git commit -m "remove file"
+
+删除也是一个修改操作
+
+rm file 从文件管理器中删除
+git rm file 添加删除操作到暂存区
+git commit -m "remove file" 提交
+
+
 ? 我从 github 上删除文件失败了
 
+
 7、 恢复误删除的文件
+
 git checkout -- file
 
 
 8、 从远程库克隆
+
+？我从远程库克隆的与本地创建的版本库之后的操作有什么不同吗
+
 git clone git@github.com:efeelize/file.git
+
+
+8.1、克隆之后的多人协作
+
+  after从远程库克隆后
+
+  a)git自动把本地 master 分支和远程的 master 分支对应起来
+  b)远程库的默认名称是 origin
+  c)默认只是克隆 master 分支到本地
+
+  查看远程库的信息
+  git remote
+
+  显示更详细的信息
+  git remote -v
+  此时会显示可以抓取和推送的 origin 的地址
+  if没有推送权限  
+  else 看不到 push 的地址
+
+  推送分支，ie.把该分支上的所有本地提交推送到远程库
+
+  推送指定分支到远程库对应的远程分支上
+
+  git push origin master
+  git push origin dev
+  ...
+
+  master  主分支时刻与远程同步
+  dev     开发分支时刻与远程同步
+  bug     只用于在本地修复 bug，没必要推送到远程，unless 老板要求看每周到底修复了几个 bug
+  feature  是否推送到远程，depends on 是否在其上进行了合作开发
+
+
 
 9、 修改文件名
 mv 旧文件名 新文件名
@@ -84,17 +168,28 @@ mv 旧文件名 新文件名
 git checkout -- file
 git checkout file 切换到另一个分支
 
+
 a)修改了但是还没有放到暂存区，撤销修改就回到和版本库一模一样的状态（git add 的状态）
 b)已经添加到了暂存区之后，又做了修改，此时撤销修改就回到添加到暂存区后的状态（git commit 的状态）
+
+？我这样理解是否正确
+
 
 git reset HEAD file 可以把暂存区的修改撤销掉重新返回到工作区
 git reset 可以回退版本，也可以把暂存区的修改回退到工作区
 要用 git status 查看
 
+？注意如何从输出的信息中看出是工作区还是暂存区有修改
+
+
+
 
 11、 dev
 
 ？不是很理解 master&dev relationship
+？master 分支稳定，但是仅用来发布新版本
+？为什么在 dev 上开发之后要删除
+
 
 a)git chekout -b dev
 实际上是创建并切换，相当于两条命令
@@ -129,20 +224,133 @@ git branch
 17、创建标签
 a)切换到需要打标签的分支上
 git branch
+
+
 18、操作标签
+标签是一个指向某个 commit 的指针
+
+在 git 上打标签
+
+a)切换到要打标签的分支上
+git branch
+git checkout dev
+
+b)打标签
+git tag 要打的新标签
+
+
+查看所有的标签
+git tag
+
+创建带有说明的标签
+git tag -a 要打的标签 （指定标签名）
+git tag -m 要打的标签 （指定说明文字）
+
+
+
+查看标签信息
+git show 标签的名称
+
+
+
+
+
+默认的标签是打在最新提交的 commit 上面
+标签是按照字母的顺序排序列出的
+
+
 
 19、config
 a)让 git显示颜色让命令输出看起来更加醒目
 git config --global color.ui true
 
-b)命令简写
-git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.com commit
-git config --global alias.br branch
-git config --global alias.unstage "reset HEAD"
-git config --global alias.last "log-1" 
-git config --global alias.config  cfig
+b)命令别名
 
-?好像没有配置成功，是不是双引号应该是单引号
+git config --global alias.别名 原名
+
+--global参数是全局参数，也就是这些命令在这台电脑的所有 git 仓库下都有用
+
+
+删除别名
+?别名在 alias 后面，要删除别名，直接把对应的行删掉
+
+？当前用户的 git配置文件放在用户主目录下的隐藏文件.gitconfig
+我找不到
+
+？配置别名也可以直接修改这个文件，如果改错了，可以删掉文件重新通过命令配置
+
+
+
+我所使用的别名
+
+git config --global alias.st status
+git config --global alias.ckt checkout
+git config --global alias.cmt commit
+git config --global alias.br branch 
+git config --global alias.cfg config
+
+?我怎么验证我设置成功了
+？什么样的命令可以配置别名
+？显示最后一次的提交信息是用来干什么
+
+
+
+c)忽略特殊文件
+if Untracked files...
+else 某些文件在 git 工作目录中但是没有提交
+
+priciple:
+
+1.忽略操作系统自动生成的文件
+2.忽略编译生成的中间文、可执行文件
+3.忽略带有敏感信息的配置文件
+
+way:
+a)在根目录处编写.gitignore，在其中写入在添加和提交时需要忽略的文件
+
+b).gitignore 文件本身要放到版本库里，并且可以对.gitignore 做版本管理
+
+?把该文件交给 git
+是 add 和 commit 吗
+
+？用git status检验文件内容是否合法
+if clean, else 合法
+
+
+？我没有看懂是什么编写这个文件的
+？mac 生成的 Dis...是不是要 ignore
+
+
+Qs in version control
+
+1. commit related changes
+
+granular commits
+
+2.You should only commit code when it‘s completed.
+
+3.if you‘re tempted to commit just because you need a clean working copy (to check out a branch, pull in changes, etc.) consider using Git‘s «Stash» feature instead.
+
+4.test code before u commit
+
+Test it thoroughly to make sure it really is completed and has no side e ects 
+
+5.version control is not a backup system
+
+  VCS
+
+6.use branch
+ Branches are the perfect tool to help you avoid mixing up di erent lines of development.
+
+
+
+
+
+
+
+
+
+
+
+
 
