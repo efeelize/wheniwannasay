@@ -125,7 +125,9 @@ git rm file 添加删除操作到暂存区
 git commit -m "remove file" 提交
 
 
-? 我从 github 上删除文件失败了
+我从 github 上删除文件失败了
+cuz 在github 上进行操作，与本地的版本库之间有差异。
+so git pull 将远程库的操作与本地进行同步然后再进行 push
 
 
 7、 恢复误删除的文件
@@ -214,9 +216,10 @@ git reset 可以回退版本，也可以把暂存区的修改回退到工作区
 
 11、 dev
 
-？不是很理解 master&dev relationship
+？不是很理解 master&dev  
 ？master 分支稳定，但是仅用来发布新版本
 ？为什么在 dev 上开发之后要删除
+cuz 多人在 dev 上面进行过合作开发之后会有多个版本，如果都提交在 master 上面就会造成混乱，每次都要用 git pull 和本地库进行同步
 
 
 a)git chekout -b dev
