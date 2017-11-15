@@ -1,0 +1,60 @@
+linux_command
+
+[美]Scott Granneman. Linux命令速查手册 
+
+ls -R
+ls -recursive
+用一个命令来查看多个子目录的内容
+
+ls -1
+用单独一列的方式来查看 ls 命令的结果
+ls -1R ~/
+if 列举太多，可以Ctrl+c取消命令
+
+
+ls -m
+ls -m ~/
+用逗号分隔的列表显示内容
+
+ls -a
+ls --all
+ls -a ~/
+查看隐藏的文件和文件夹
+.当前目录
+..父目录
+
+ls -F
+ls --classify
+:NG
+
+显示文件的类型
+* 可执行文件
+/目录
+@符号链接文件
+=套接字（socket）
+
+pwd
+print working directory
+cd ~
+切换到 home 目录
+
+mkdir -pv file 
+创建文件夹
+mkdir -pv subfile
+cd file创建新的文件夹
+mkdir -pv subfile/1
+在 subflie 里直接创建1的文件夹
+
+cp 想要复制的文件 被复制文件的新名称
+cp file1 file2
+
+cp -R 想要复制的文件 被复制文件的新名称
+cp -R file1 file2
+此时目录和内容都会被复制
+
+
+
+
+
+
+
