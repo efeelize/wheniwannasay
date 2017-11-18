@@ -138,6 +138,7 @@ git checkout -- file
 8、 从远程库克隆
 
 ？我从远程库克隆的与本地创建的版本库之后的操作有什么不同吗
+远程库克隆主要是用在多人合作开发一个项目的时候，别的人从远程库克隆（里面已经有了很多写好的文件）
 
 git clone git@github.com:efeelize/file.git
 
@@ -204,12 +205,13 @@ b)已经添加到了暂存区之后，又做了修改，此时撤销修改就回
 
 ？我这样理解是否正确
 
+同时丢弃工作区和暂存区
 
 git reset HEAD file 可以把暂存区的修改撤销掉重新返回到工作区
 git reset 可以回退版本，也可以把暂存区的修改回退到工作区
 要用 git status 查看
 
-？注意如何从输出的信息中看出是工作区还是暂存区有修改
+？注意如何从输出的信息中看出是工作区还是暂存区有修改（同时修改过但是教程没有写清楚）
 
 
 
@@ -320,6 +322,7 @@ cmt commit
 br branch 
 cfg config
 ga global alias(这个好像没有成功)
+cuz 我配置的时候同时写了两个相反的造成了冲突
 
 
 ？什么样的命令可以配置别名
@@ -339,6 +342,8 @@ priciple:
 
 way:
 a)在根目录处编写.gitignore，在其中写入在添加和提交时需要忽略的文件
+指的是在自己要忽略的文件夹中的根目录
+
 
 b).gitignore 文件本身要放到版本库里，并且可以对.gitignore 做版本管理
 
@@ -351,6 +356,8 @@ if clean, else 合法
 
 ？我没有看懂是什么编写这个文件的
 ？mac 生成的 Dis...是不是要 ignore
+
+可以 ignore，也可以 rm --rf 强行删除
 
 
 Qs in version control
