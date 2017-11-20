@@ -124,6 +124,13 @@ recurse force
 git rm file 添加删除操作到暂存区
 git commit -m "remove file" 提交
 
+Q:if 直接用 rm file 进行删除后 push，else 远程库还存在？
+A:因为没有提交 到stage ...
+
+1) git add rm .
+2) git commit -m""
+3) git push github master
+
 
 我从 github 上删除文件失败了
 cuz 在github 上进行操作，与本地的版本库之间有差异。
