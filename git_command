@@ -51,7 +51,8 @@ git commit -m "add 3 files."
 
 
 notes:
-创建 git 版本库的时候，git 自动为我们创建唯一的 master 分支，-m 就是往 master 分支上提交更改。一旦提交后，git status 查看工作区就是干净的。
+创建 git 版本库的时候，git 自动为我们创建唯一的 master 分支，-m 就是往 master
+分支上提交更改。一旦提交后，git status 查看工作区就是干净的。
 
 
 
@@ -145,7 +146,8 @@ git checkout -- file
 8、 从远程库克隆
 
 ？我从远程库克隆的与本地创建的版本库之后的操作有什么不同吗
-远程库克隆主要是用在多人合作开发一个项目的时候，别的人从远程库克隆（里面已经有了很多写好的文件）
+远程库克隆主要是用在多人合作开发一个项目的时候，别的人从远程库克隆（里面已经有了很多写好的
+文件）
 
 git clone git@github.com:efeelize/file.git
 
@@ -178,7 +180,8 @@ git clone git@github.com:efeelize/file.git
 
   master  主分支时刻与远程同步
   dev     开发分支时刻与远程同步
-  bug     只用于在本地修复 bug，没必要推送到远程，unless 老板要求看每周到底修复了几个 bug
+  bug     只用于在本地修复 bug，没必要推送到远程，unless 老板要求看每周到底修复了几个
+bug
   feature  是否推送到远程，depends on 是否在其上进行了合作开发
 
 
@@ -208,7 +211,8 @@ git checkout file 切换到另一个分支
 
 
 a)修改了但是还没有放到暂存区，撤销修改就回到和版本库一模一样的状态（git add 的状态）
-b)已经添加到了暂存区之后，又做了修改，此时撤销修改就回到添加到暂存区后的状态（git commit 的状态）
+b)已经添加到了暂存区之后，又做了修改，此时撤销修改就回到添加到暂存区后的状态（git 
+commit 的状态）
 
 ？我这样理解是否正确
 
@@ -375,18 +379,22 @@ granular commits
 
 2.You should only commit code when it‘s completed.
 
-3.if you‘re tempted to commit just because you need a clean working copy (to check out a branch, pull in changes, etc.) consider using Git‘s «Stash» feature instead.
+3.if you‘re tempted to commit just because you need a clean working copy (
+to check out a branch, pull in changes, etc.) consider using Git‘s «Stash»
+feature instead.
 
 4.test code before u commit
 
-Test it thoroughly to make sure it really is completed and has no side e ects 
+Test it thoroughly to make sure it really is completed and has no side 
+ ects 
 
 5.version control is not a backup system
 
   VCS
 
 6.use branch
- Branches are the perfect tool to help you avoid mixing up di erent lines of development.
+ Branches are the perfect tool to help you avoid mixing up di erent lines
+  of development.
 
 
 
