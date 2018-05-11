@@ -31,7 +31,7 @@
 - write for ur immdiate readers--the ones to whom u're directing ur communications.don't write for some remote decision maker who probably won't ever see,let alone interpret,the document.if u write well for the front-end users,u're less likelt to have trouble down the line.
 
 ## 32.organize provisons in order of descending importance.
-###1.cuz
+### 1.cuz
 - remember that plain english is concerned with readers--what they need to know and when they need to know it.u can't be content to let readers fend for themselves.u'll need to organize document so logially and clearly that further reference to any specific point is easy.although the nature of the particular
 document will influence the stru.
 
