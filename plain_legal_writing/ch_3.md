@@ -113,7 +113,7 @@ delay the citation enables u to write a stronger topic sentence.
  | contrasting  |               yet,instead,however,still,nevertheless,nonetheless,conversely,on the contrary whereas,in contrast to,unfortunately | 
 | restating  | this means,insimpler terms,in short,put differently,again,that is,in other words. |
 | comparing   |    in the same way,similarly,likewise |
-introducing a cause              since ,when,becuz
+introducing a cause   | since ,when,becuz |
 | introducing a result  |  hence,as a resuly,therefore,accordingly,then ,so |
 | conceding || qualifying   | granated,of course,to be sure, admittedly,though,even though,even if,only if,true,while,naturally,in some cases,occasionally,if,while it might be argued that,despite |
 | pressing a point     |   assuredly,still,even so,in fact,as a matter of fact,indeed,of course,still.without exception,even so,anyway,the fact remains,assuredly. |
@@ -130,7 +130,8 @@ introducing a cause              since ,when,becuz
 ### 2) when:
 at the bottom of page one:the examiner's reasoning was flawed--followed by a long paragraph intro by the words  "in the first place"
 
-##### two ways:2.1) the better one :
+##### two ways:
+##### 2.1) the better one :
  the examiner's reasoning was flawed for three reasons--followed by a bulleted list[43] succinctly introducing those reasons before u embark on a full explanation
 ####  2.2) omit the bulleted list while metioning that there are 3 reasons.
 
