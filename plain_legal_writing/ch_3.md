@@ -115,7 +115,7 @@ delay the citation enables u to write a stronger topic sentence.
 | comparing   |    in the same way,similarly,likewise |
 introducing a cause   | since ,when,becuz |
 | introducing a result  |  hence,as a resuly,therefore,accordingly,then ,so |
-| conceding || qualifying   | granated,of course,to be sure, admittedly,though,even though,even if,only if,true,while,naturally,in some cases,occasionally,if,while it might be argued that,despite |
+| conceding，qualifying | granated,of course,to be sure, admittedly,though,even though,even if,only if,true,while,naturally,in some cases,occasionally,if,while it might be argued that,despite |
 | pressing a point     |   assuredly,still,even so,in fact,as a matter of fact,indeed,of course,still.without exception,even so,anyway,the fact remains,assuredly. |
 | explanning a sentence   |  that is,then ,earlier,previously,meanwhile,simulataneously,now,immediately,at once,until now,soon,no sonner,that being so,afterwars,later,eventually,in the future,at last,finally,in the end. | 
 | summing up  |   to summarize,to sum up,to conclude,in conclusion,in short,in brief,so ,and so,concequently,therefore,all in all |
